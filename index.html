@@ -4,9 +4,11 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Tapwell × Villa Sjövik — Samarbetsförslag 2026</title>
+<meta name="description" content="Fyra projektspår där Tapwell möter Villa Sjöviks hem. BOX7200 ED2, ARM7300 i Brushed Nickel, och koncern-vinkeln Tapwell + Bricmate — krom och borstad silver, filmat och fotograferat för era egna kanaler."/>
 <link rel="icon" type="image/png" href="./tapwell-favicon.png"/>
+<link rel="apple-touch-icon" href="./tapwell-favicon.png"/>
 <meta property="og:title" content="Tapwell × Villa Sjövik — Samarbetsförslag 2026"/>
-<meta property="og:description" content="Tre koncept där Tapwells krom och Brushed Nickel möter Villa Sjöviks hem — en arkitektonisk linje, en fristående skulptur, och en koncern-vinkel som lyfter Tapwell och Bricmate parallellt."/>
+<meta property="og:description" content="Fyra projektspår där Tapwell möter Villa Sjöviks hem. BOX7200 ED2, ARM7300 i Brushed Nickel, och koncern-vinkeln Tapwell + Bricmate — krom och borstad silver, filmat och fotograferat för era egna kanaler."/>
 <meta property="og:image" content="https://villasjovik.github.io/tapwell/tapwell-og.png"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
@@ -15,7 +17,7 @@
 <meta property="og:type" content="website"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Tapwell × Villa Sjövik — Samarbetsförslag 2026"/>
-<meta name="twitter:description" content="Tre koncept där Tapwells krom och Brushed Nickel möter Villa Sjöviks hem."/>
+<meta name="twitter:description" content="Fyra projektspår där Tapwell möter Villa Sjöviks hem."/>
 <meta name="twitter:image" content="https://villasjovik.github.io/tapwell/tapwell-og.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -230,10 +232,18 @@ max-width:900px;margin-bottom:56px}
 .mq-mark{width:112px}
 .mq-nuu{width:164px}
 .mq-ved{width:140px}
-.mq-tine{width:240px}
+.mq-tine{width:180px}
 .mq-husq{width:90px}
+/* Sioox och Jape: PNG/SVG har tomrum runt texten — skala efter faktisk text-höjd, inte bildbbox.
+   Sioox-PNG efter crop är 600×146 → texten fyller ~95% av höjden. Jape-SVG är 1400×508 → texten
+   fyller ~64% (en del padding ovan/under). Scale-faktorer ligger så att den effektiva textsiluetten
+   matchar Lexington (160px @ ~36px text-höjd). */
+.mq-sioo{width:148px}
+.mq-jape{width:158px}
 
 .mq-mn img{transform:translateY(-7px)}
+.mq-jape img{transform:translateY(10px)}
+.mq-sioo img{transform:translateY(0)}
 
 @media(max-width:860px){
   .mq-track{gap:46px}
@@ -241,7 +251,8 @@ max-width:900px;margin-bottom:56px}
   .mq-item::after{right:-27px;font-size:18px}
   .mq-lex{width:134px} .mq-mn{width:98px} .mq-seg{width:122px}
   .mq-mark{width:94px} .mq-nuu{width:138px} .mq-ved{width:118px}
-  .mq-tine{width:206px} .mq-husq{width:76px}
+  .mq-tine{width:150px} .mq-husq{width:76px}
+  .mq-sioo{width:124px} .mq-jape{width:132px}
   .mq-mn img{transform:translateY(-5px)}
 }
 
@@ -290,6 +301,51 @@ max-width:900px;margin-bottom:56px}
 .sp-grid.sp-grid-4>.sp-c:nth-child(2){--sp-rot:-8deg;--sp-base-y:-6px;animation-delay:0s}
 .sp-grid.sp-grid-4>.sp-c:nth-child(3){--sp-rot:8deg;--sp-base-y:6px;animation-delay:-5.5s}
 .sp-grid.sp-grid-4>.sp-c:nth-child(4){--sp-rot:-8deg;--sp-base-y:6px;animation-delay:-8.2s}
+
+/* SP-GRID 3+1: tre tiltade kort på rad 1 + bred rektangel ("Ert upplägg") på rad 2.
+   Minimal divider mellan rader, inga tilt på den breda rutan. */
+.sp-grid.sp-grid-3plus1{grid-template-columns:repeat(3,1fr);gap:22px;perspective-origin:50% 40%;row-gap:36px}
+.sp-grid.sp-grid-3plus1>.sp-c:nth-child(1){--sp-rot:12deg;--sp-base-y:14px;animation-delay:-2.2s}
+.sp-grid.sp-grid-3plus1>.sp-c:nth-child(2){--sp-rot:0deg;--sp-base-y:-18px;z-index:2;animation-delay:0s}
+.sp-grid.sp-grid-3plus1>.sp-c:nth-child(3){--sp-rot:-12deg;--sp-base-y:14px;animation-delay:-5.5s}
+.sp-grid.sp-grid-3plus1>.sp-c.sp-wide{grid-column:1/-1;--sp-rot:0deg;--sp-base-y:0px;
+  /* Helt platt — ingen tilt, ingen 3D-float, ingen rotation */
+  transform:none!important;animation:none!important;transform-style:flat!important;
+  padding:38px 56px;
+  display:flex;flex-direction:column;gap:24px;align-items:stretch;
+  background:
+    linear-gradient(135deg,rgba(212,168,75,.07) 0%,rgba(212,168,75,.02) 50%,rgba(212,168,75,.05) 100%),
+    var(--brn);
+  border:1px solid rgba(212,168,75,.22);
+  position:relative}
+.sp-grid.sp-grid-3plus1>.sp-c.sp-wide .sp-wide-grid{
+  display:grid;grid-template-columns:1fr 2.6fr;gap:42px;align-items:center}
+.sp-grid.sp-grid-3plus1>.sp-c.sp-wide .sp-eyebrow{margin-bottom:6px}
+.sp-grid.sp-grid-3plus1>.sp-c.sp-wide h3{font-size:28px;margin-bottom:6px}
+.sp-grid.sp-grid-3plus1>.sp-c.sp-wide .sp-sub{margin-bottom:0}
+.sp-grid.sp-grid-3plus1>.sp-c.sp-wide .sp-body{margin:0}
+.sp-grid.sp-grid-3plus1>.sp-c.sp-wide>.sp-tag{align-self:flex-start;margin:0}
+
+/* Subtil grå fade-divider mellan 3-raden och Ert upplägg */
+.sp-grid.sp-grid-3plus1>.sp-divider{
+  grid-column:1/-1;
+  height:1px;
+  width:480px;
+  max-width:80%;
+  margin:8px auto 0;
+  background:linear-gradient(90deg,transparent 0%,rgba(140,124,108,.32) 35%,rgba(140,124,108,.42) 50%,rgba(140,124,108,.32) 65%,transparent 100%);
+  pointer-events:none;
+  opacity:0;
+  transform:scaleX(.6);
+  transition:opacity .9s var(--ease) .3s,transform .9s cubic-bezier(.16,1,.3,1) .3s
+}
+.sp-grid.sp-grid-3plus1>.sp-divider.in,
+.in .sp-grid.sp-grid-3plus1>.sp-divider{opacity:1;transform:scaleX(1)}
+@media(max-width:780px){
+  .sp-grid.sp-grid-3plus1{grid-template-columns:1fr;perspective:none}
+  .sp-grid.sp-grid-3plus1>.sp-c.sp-wide{padding:28px 22px;gap:18px}
+  .sp-grid.sp-grid-3plus1>.sp-c.sp-wide .sp-wide-grid{grid-template-columns:1fr;gap:14px}
+}
 
 @keyframes sp-float-anim{
   0%{--sp-float:0px}
@@ -399,8 +455,8 @@ box-shadow:
   0 0 90px rgba(212,168,75,.14),
   inset 0 1px 0 rgba(255,255,255,.08)}
 
-.price-grid>.price-box:first-child{--pb-rot:11deg;animation-delay:-3s;--pb-scale:.9}
-.price-grid>.price-box:last-child{--pb-rot:-11deg;animation-delay:0s}
+.price-grid>.price-box:first-child{--pb-rot:11deg;animation-delay:-3s}
+.price-grid>.price-box:last-child{--pb-rot:-11deg;animation-delay:0s;--pb-scale:.9}
 
 @keyframes pb-float-anim{
   0%{--pb-float:0px}
@@ -420,6 +476,75 @@ box-shadow:
 .ribbon-muted{background:rgba(212,168,75,.22);color:rgba(242,237,228,.7);letter-spacing:.18em}
 .sec-sublead{max-width:580px;margin:-20px auto 48px;font-size:14px;line-height:1.75;color:var(--muted);text-align:center}
 @media(max-width:700px){.sec-sublead{font-size:13px;margin-bottom:36px}}
+
+/* RÄCKVIDD-BOOST TOGGLE — ljusare skogsgrön + iOS-style switch, fast storlek */
+.ads-toggle{display:flex;justify-content:center;margin:-12px auto 44px;max-width:640px;position:relative}
+
+/* Demo-hint badge (auto-demo over toggle) */
+.demo-hint{position:absolute;left:50%;top:-26px;transform:translate(-50%,-100%) translateY(8px);
+  display:inline-flex;align-items:center;gap:9px;
+  font-family:'Inter',sans-serif;font-size:10px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--gold);white-space:nowrap;pointer-events:none;z-index:5;
+  opacity:0;transition:opacity .55s var(--ease),transform .55s var(--ease);
+  filter:drop-shadow(0 0 12px rgba(212,168,75,.55))}
+.demo-hint.show{opacity:1;transform:translate(-50%,-100%) translateY(0)}
+.demo-hint-arrow{display:inline-block;font-size:14px;color:var(--gold2);letter-spacing:0;
+  animation:demoHintArrow 1.4s ease-in-out infinite}
+@keyframes demoHintArrow{0%,100%{transform:translateY(0);opacity:.7}50%{transform:translateY(4px);opacity:1}}
+@media(max-width:560px){
+  .demo-hint{font-size:9px;letter-spacing:.22em;gap:7px;top:-22px}
+  .demo-hint-arrow{font-size:12px}
+}
+.ads-pill{display:inline-flex;align-items:center;gap:16px;padding:13px 26px;
+  background:rgba(8,68,36,.55);
+  backdrop-filter:blur(28px) saturate(1.4);-webkit-backdrop-filter:blur(28px) saturate(1.4);
+  border:1px solid rgba(212,168,75,.18);border-radius:100px;
+  color:var(--ink);font-family:'Inter',sans-serif;cursor:pointer;
+  transition:background .5s var(--ease),border-color .5s var(--ease),transform .25s var(--ease),box-shadow .5s var(--ease);
+  position:relative;
+  box-shadow:0 4px 24px rgba(0,0,0,.32),0 0 0 1px rgba(0,0,0,.1)}
+.ads-pill:hover{background:rgba(12,90,48,.72);border-color:rgba(212,168,75,.35);transform:translateY(-1px);
+  box-shadow:0 8px 40px rgba(0,0,0,.4),0 0 50px rgba(52,199,89,.1)}
+.ads-pill:active{transform:translateY(0)}
+
+/* iOS-style switch: grey track när av, iOS-grön när på */
+.ads-switch{width:48px;height:28px;background:rgba(120,120,128,.32);border-radius:100px;
+  position:relative;transition:background-color .3s ease;flex-shrink:0;border:none}
+.ads-switch::after{content:'';position:absolute;top:2px;left:2px;width:24px;height:24px;
+  background:#fff;border-radius:50%;
+  transition:transform .35s cubic-bezier(.34,1.56,.64,1);
+  box-shadow:0 3px 8px rgba(0,0,0,.18),0 3px 1px rgba(0,0,0,.06),0 0 0 .5px rgba(0,0,0,.04)}
+.ads-pill[aria-pressed="true"] .ads-switch{background:#34C759}
+.ads-pill[aria-pressed="true"] .ads-switch::after{transform:translateX(20px)}
+
+.ads-text{display:flex;flex-direction:column;align-items:flex-start;gap:3px;text-align:left}
+.ads-label{font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--ink);
+  transition:color .35s var(--ease)}
+.ads-pill[aria-pressed="true"] .ads-label{color:var(--gold)}
+
+/* Båda detail-texter staplas i samma grid-cell — pillen får alltid bredd = max(default, active),
+   och storleken ändras INTE vid toggle. Endast opacity-cross-fade. */
+.ads-detail-wrap{display:grid;align-items:center}
+.ads-detail{grid-row:1;grid-column:1;white-space:nowrap;
+  font-size:11px;letter-spacing:.02em;color:var(--muted);
+  transition:opacity .35s var(--ease),color .35s var(--ease)}
+.ads-detail-default{opacity:1}
+.ads-detail-active{opacity:0;color:var(--gold)}
+.ads-pill[aria-pressed="true"] .ads-detail-default{opacity:0}
+.ads-pill[aria-pressed="true"] .ads-detail-active{opacity:1}
+
+.price-total.boost-pulse{animation:boostPulse .9s var(--ease)}
+.price-orig.boost-pulse{animation:boostPulseSub .9s var(--ease)}
+@keyframes boostPulse{0%{transform:scale(1)}40%{transform:scale(1.04);text-shadow:0 0 24px rgba(212,168,75,.5)}100%{transform:scale(1)}}
+@keyframes boostPulseSub{0%,100%{opacity:.28}50%{opacity:.55}}
+@media(max-width:560px){
+  .ads-pill{padding:11px 18px;gap:12px}
+  .ads-label{font-size:12px}
+  .ads-detail{font-size:10px}
+  .ads-switch{width:44px;height:26px}
+  .ads-switch::after{width:22px;height:22px}
+  .ads-pill[aria-pressed="true"] .ads-switch::after{transform:translateX(18px)}
+}
 .price-includes{margin-top:32px;display:flex;flex-direction:column;gap:10px;text-align:left}
 .pi{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:rgba(242,237,228,.65);line-height:1.5}
 .pi::before{content:'·';color:var(--gold);font-size:16px;flex-shrink:0;line-height:1.2;margin-top:1px}
@@ -428,6 +553,138 @@ box-shadow:
   .price-grid{grid-template-columns:1fr;perspective:none}
   .price-box,.price-grid>.price-box:first-child,.price-grid>.price-box:last-child{--pb-rot:0deg;--pb-base-y:0px}
   .price-box{padding:36px 24px}
+}
+
+/* META — KONVERTERINGSKEDJA (visuellt flow, brun matchar sec-spar/sec-pr) */
+#sec-meta{position:relative;background:linear-gradient(168deg,#2a231c 0%,var(--brn2) 30%,var(--brn) 70%,#110e0b 100%);padding:120px 24px 110px;overflow:hidden}
+#sec-meta::before{content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
+  background-image:
+    radial-gradient(circle, rgba(212,168,75,.055) 1px, transparent 1.4px),
+    radial-gradient(circle, rgba(212,168,75,.028) 1px, transparent 1.4px);
+  background-size: 28px 28px, 41px 41px;
+  background-position: 0 0, 14px 20px}
+#sec-meta::after{content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(ellipse 70% 50% at 50% 45%,rgba(212,168,75,.07),transparent 65%)}
+.meta-inner{max-width:1180px;margin:0 auto;position:relative;z-index:1;text-align:center}
+.meta-inner .sec-h2{text-align:center;margin-bottom:88px}
+.meta-inner .sec-lbl{display:inline-flex;align-items:center;justify-content:center}
+
+/* THE FLOW — horisontell rail med animerade partiklar + noder */
+.meta-flow{position:relative;max-width:1000px;margin:0 auto 80px;padding:20px 0 40px}
+.flow-rail{position:relative;height:160px;display:flex;align-items:center;justify-content:space-between}
+
+/* Rail base line (dim) + animated trace (golden) */
+.flow-rail-line{position:absolute;left:80px;right:80px;top:50%;height:1px;
+  background:linear-gradient(90deg,transparent 0%,rgba(212,168,75,.15) 8%,rgba(212,168,75,.22) 50%,rgba(212,168,75,.15) 92%,transparent 100%);
+  transform:translateY(-50%);z-index:1}
+.flow-rail-trace{position:absolute;left:80px;right:80px;top:50%;height:1px;
+  background:linear-gradient(90deg,var(--gold) 0%,var(--gold2) 50%,var(--gold) 100%);
+  box-shadow:0 0 10px rgba(212,168,75,.45),0 0 22px rgba(212,168,75,.22);
+  transform:translateY(-50%) scaleX(0);transform-origin:left center;
+  opacity:.5;z-index:1}
+.meta-flow.in .flow-rail-trace{animation:flow-trace-draw 2.6s var(--ease) forwards}
+@keyframes flow-trace-draw{
+  0%  {transform:translateY(-50%) scaleX(0);opacity:.35}
+  60% {opacity:.9}
+  100%{transform:translateY(-50%) scaleX(1);opacity:.85}
+}
+
+/* Animated particles flowing along the rail (golden glow) */
+.flow-particle{position:absolute;top:50%;left:80px;width:7px;height:7px;
+  background:var(--gold);border-radius:50%;
+  box-shadow:0 0 10px var(--gold),0 0 22px rgba(212,168,75,.5),0 0 38px rgba(212,168,75,.25);
+  transform:translate(-50%,-50%);opacity:0;z-index:2;pointer-events:none;will-change:left,opacity,transform}
+.meta-flow.in .flow-particle.p1{animation:flow-particle-move 4.2s linear infinite;animation-delay:1.4s}
+.meta-flow.in .flow-particle.p2{animation:flow-particle-move 4.2s linear infinite;animation-delay:2.8s}
+.meta-flow.in .flow-particle.p3{animation:flow-particle-move 4.2s linear infinite;animation-delay:4.2s}
+@keyframes flow-particle-move{
+  0%  {left:80px;opacity:0;transform:translate(-50%,-50%) scale(.5)}
+  8%  {opacity:1;transform:translate(-50%,-50%) scale(1)}
+  46% {transform:translate(-50%,-50%) scale(1.25);box-shadow:0 0 16px var(--gold2),0 0 34px rgba(240,200,120,.6)}
+  54% {transform:translate(-50%,-50%) scale(1)}
+  92% {opacity:1}
+  100%{left:calc(100% - 80px);opacity:0;transform:translate(-50%,-50%) scale(.5)}
+}
+
+/* Nodes — premium circular medallions with concentric pulse */
+.flow-node{position:relative;z-index:3;display:flex;flex-direction:column;align-items:center;flex:0 0 auto;width:160px}
+.flow-node-dot-wrap{position:relative;width:72px;height:72px;display:flex;align-items:center;justify-content:center}
+.flow-node-dot{position:relative;z-index:2;width:72px;height:72px;border-radius:50%;
+  background:radial-gradient(circle at 30% 30%,#3a2f24 0%,var(--brn2) 45%,#0f0b08 100%);
+  border:1.5px solid rgba(212,168,75,.45);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Playfair Display',serif;font-size:20px;font-weight:500;color:var(--gold);
+  box-shadow:
+    0 14px 32px rgba(0,0,0,.6),
+    0 0 0 1px rgba(0,0,0,.3),
+    inset 0 1px 0 rgba(255,255,255,.06),
+    inset 0 0 24px rgba(212,168,75,.08);
+  transition:border-color .6s var(--ease),box-shadow .6s var(--ease),transform .5s var(--ease)}
+.meta-flow.in .flow-node.n1 .flow-node-dot{animation:flow-node-light 4.2s var(--ease) infinite;animation-delay:1.4s}
+.meta-flow.in .flow-node.n2 .flow-node-dot{animation:flow-node-light 4.2s var(--ease) infinite;animation-delay:2.8s}
+.meta-flow.in .flow-node.n3 .flow-node-dot{animation:flow-node-light 4.2s var(--ease) infinite;animation-delay:4.2s}
+@keyframes flow-node-light{
+  0%,40%  {border-color:rgba(212,168,75,.45);box-shadow:0 14px 32px rgba(0,0,0,.6),0 0 0 1px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.06),inset 0 0 24px rgba(212,168,75,.08)}
+  50%     {border-color:var(--gold2);box-shadow:0 14px 32px rgba(0,0,0,.6),0 0 0 1px rgba(0,0,0,.3),0 0 22px rgba(212,168,75,.45),inset 0 1px 0 rgba(255,255,255,.12),inset 0 0 36px rgba(212,168,75,.22)}
+  60%,100%{border-color:rgba(212,168,75,.45);box-shadow:0 14px 32px rgba(0,0,0,.6),0 0 0 1px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.06),inset 0 0 24px rgba(212,168,75,.08)}
+}
+
+/* Pulse rings (concentric expanding) */
+.flow-node-pulse{position:absolute;inset:0;border-radius:50%;border:1px solid rgba(212,168,75,.5);opacity:0;pointer-events:none}
+.meta-flow.in .flow-node.n1 .flow-node-pulse{animation:flow-node-pulse 4.2s var(--ease) infinite;animation-delay:1.4s}
+.meta-flow.in .flow-node.n2 .flow-node-pulse{animation:flow-node-pulse 4.2s var(--ease) infinite;animation-delay:2.8s}
+.meta-flow.in .flow-node.n3 .flow-node-pulse{animation:flow-node-pulse 4.2s var(--ease) infinite;animation-delay:4.2s}
+@keyframes flow-node-pulse{
+  0%,40%  {transform:scale(.9);opacity:0}
+  50%     {transform:scale(1);opacity:.8;border-color:var(--gold2)}
+  85%     {transform:scale(2);opacity:0;border-color:rgba(212,168,75,0)}
+  100%    {transform:scale(2);opacity:0}
+}
+
+/* Node label below dot */
+.flow-node-label{display:flex;flex-direction:column;align-items:center;gap:6px;margin-top:28px;width:200px}
+.flow-cap{font-family:'Playfair Display',serif;font-size:16px;font-weight:500;color:var(--ink);line-height:1.3;letter-spacing:-.003em}
+.flow-sub{font-family:'Inter',sans-serif;font-size:10px;color:rgba(212,168,75,.7);letter-spacing:.22em;text-transform:uppercase;font-weight:600}
+
+/* Kicker */
+.meta-kicker{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(17px,2.2vw,23px);color:var(--warm);max-width:720px;margin:0 auto;line-height:1.55;text-align:center}
+.meta-kicker em{color:var(--gold);font-style:italic}
+
+/* Anchor — visuell brygga till Investering-sektionen */
+.meta-anchor{margin:36px auto 0;font-family:'Inter',sans-serif;font-size:10px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:rgba(212,168,75,.65);text-align:center;display:flex;align-items:center;justify-content:center;gap:14px}
+.meta-anchor-text{display:inline-block}
+.meta-anchor-arrow{display:inline-block;font-size:14px;color:var(--gold);animation:metaAnchorBob 2.4s ease-in-out infinite;letter-spacing:0}
+@keyframes metaAnchorBob{0%,100%{transform:translateY(0);opacity:.55}50%{transform:translateY(5px);opacity:1}}
+@media(max-width:880px){.meta-anchor{font-size:9px;gap:10px;margin-top:28px;padding:0 8px}}
+
+@media(max-width:880px){
+  #sec-meta{padding:88px 16px 80px}
+  .meta-inner .sec-h2{margin-bottom:56px}
+  .meta-flow{padding:8px 0 16px;margin-bottom:56px}
+  .flow-rail{flex-direction:column;height:auto;gap:54px;align-items:flex-start;padding-left:24px}
+  .flow-rail-line{left:60px;right:auto;top:48px;bottom:48px;width:1px;height:auto;transform:none;
+    background:linear-gradient(180deg,transparent 0%,rgba(212,168,75,.18) 8%,rgba(212,168,75,.22) 50%,rgba(212,168,75,.18) 92%,transparent 100%)}
+  .flow-rail-trace{left:60px;right:auto;top:48px;width:1px;height:calc(100% - 96px);
+    transform:translateX(-50%) scaleY(0);transform-origin:top center;
+    background:linear-gradient(180deg,var(--gold) 0%,var(--gold2) 50%,var(--gold) 100%)}
+  .meta-flow.in .flow-rail-trace{animation:flow-trace-draw-v 2.6s var(--ease) forwards}
+  @keyframes flow-trace-draw-v{
+    0%  {transform:translateX(-50%) scaleY(0);opacity:.35}
+    60% {opacity:.9}
+    100%{transform:translateX(-50%) scaleY(1);opacity:.85}
+  }
+  .flow-particle{display:none}
+  .flow-node{width:100%;flex-direction:row;justify-content:flex-start;gap:24px;align-items:center}
+  .flow-node-dot-wrap{flex-shrink:0}
+  .flow-node-label{align-items:flex-start;margin-top:0;width:auto;text-align:left;gap:4px}
+  .flow-cap{font-size:17px;text-align:left}
+  .flow-sub{letter-spacing:.18em}
+}
+
+@media (prefers-reduced-motion: reduce){
+  .flow-particle{display:none}
+  .flow-rail-trace{transform:translateY(-50%) scaleX(1)!important;opacity:.85!important;animation:none!important}
+  .flow-node-dot,.flow-node-pulse{animation:none!important}
 }
 
 /* CTA */
@@ -693,24 +950,21 @@ position:relative;overflow:hidden;transition:color .35s}
   <div class="h-orb h-orb-3" aria-hidden="true"></div>
   <div class="h-dots" aria-hidden="true"></div>
   <div class="h-content">
-    <p class="h-eyebrow">Samarbetsförslag &middot; Vår 2026</p>
+    <p class="h-eyebrow">Samarbetsförslag &middot; 2026</p>
     <div class="h-lockup">
       <div class="h-side h-side-l">
-        <!-- Identical width/height + identical shadow-y as the right side keeps
-             the ground shadows perfectly aligned regardless of the SVGs'
-             intrinsic aspect ratios. -->
         <div class="logo-3d hero-logo-brand"
              data-svg="./tapwell.svg"
-             data-color="#C8CDD2"
-             data-material="metal" data-motion="float"
-             data-rotate-speed="0"
-             data-bevel-depth="6"
+             data-material="chrome"
+             data-motion="float-spin"
+             data-rotate-speed="0.3"
+             data-bevel-depth="10"
              data-sparks="true"
              data-shadow="true"
-             data-shadow-y="-325"
+             data-shadow-y="-330"
              data-delay="0"
              data-nudge-x="-12"
-             style="width:48vw;height:20vw;max-width:560px;max-height:230px">
+             style="width:48vw;height:26vw;max-width:580px;max-height:330px">
         </div>
       </div>
       <span class="h-x">x</span>
@@ -722,14 +976,14 @@ position:relative;overflow:hidden;transition:color .35s}
              data-bevel-depth="18"
              data-sparks="true"
              data-shadow="true"
-             data-shadow-y="-325"
+             data-shadow-y="-330"
              data-delay="0.15"
              data-nudge-x="12"
              style="width:42vw;height:26vw;max-width:500px;max-height:330px">
         </div>
       </div>
     </div>
-    <h1 class="h-tagline">Krom och <em>Brushed Nickel</em> i det hem<br>som följarna redan <em>lever med</em>.</h1>
+    <h1 class="h-tagline">Krom och <em>Brushed Nickel</em><br>i det hem som följarna redan <em>lever med</em>.</h1>
     <div class="h-scroll" aria-hidden="true">
       <span>Utforska</span>
       <div class="h-line"></div>
@@ -746,60 +1000,77 @@ position:relative;overflow:hidden;transition:color .35s}
   </div>
   <div class="mq-grid">
     <div class="mq-track">
+      <div class="mq-item"><div class="mq-logo mq-mark"><img src="logos/markslojd.svg" alt="Markslöjd"></div></div>
       <div class="mq-item"><div class="mq-logo mq-lex"><img src="logos/lexington.png" alt="Lexington"></div></div>
-      <div class="mq-item"><div class="mq-logo mq-mn"><img src="logos/mille_notti.avif" alt="Mille Notti"></div></div>
-      <div class="mq-item"><div class="mq-logo mq-seg"><img src="logos/segway.png" alt="Segway"></div></div>
-      <div class="mq-item"><div class="mq-logo mq-mark"><img src="logos/markslojd.avif" alt="Markslöjd"></div></div>
-      <div class="mq-item"><div class="mq-logo mq-nuu"><img src="logos/nuura.svg" alt="Nuura"></div></div>
-      <div class="mq-item"><div class="mq-logo mq-ved"><img src="logos/vedum.png" alt="Vedum"></div></div>
-      <div class="mq-item"><div class="mq-logo mq-tine"><img src="logos/tinekhome.svg" alt="TineK Home"></div></div>
       <div class="mq-item"><div class="mq-logo mq-husq"><img src="logos/husqvarna.jpg" alt="Husqvarna"></div></div>
+      <div class="mq-item"><div class="mq-logo mq-seg"><img src="logos/segway.png" alt="Segway"></div></div>
+      <div class="mq-item"><div class="mq-logo mq-ved"><img src="logos/vedum.png" alt="Vedum"></div></div>
+      <div class="mq-item"><div class="mq-logo mq-mn"><img src="logos/mille_notti.avif" alt="Mille Notti"></div></div>
+      <div class="mq-item"><div class="mq-logo mq-nuu"><img src="logos/nuura.svg" alt="Nuura"></div></div>
+      <div class="mq-item"><div class="mq-logo mq-sioo"><img src="logos/sioox.png" alt="Sioo:X"></div></div>
+      <div class="mq-item"><div class="mq-logo mq-tine"><img src="logos/tinekhome.svg" alt="TineK Home"></div></div>
+      <div class="mq-item"><div class="mq-logo mq-jape"><img src="logos/jape.svg" alt="Jape"></div></div>
       <!-- duplikat för sömlös loop -->
+      <div class="mq-item" aria-hidden="true"><div class="mq-logo mq-mark"><img src="logos/markslojd.svg" alt=""></div></div>
       <div class="mq-item" aria-hidden="true"><div class="mq-logo mq-lex"><img src="logos/lexington.png" alt=""></div></div>
-      <div class="mq-item" aria-hidden="true"><div class="mq-logo mq-mn"><img src="logos/mille_notti.avif" alt=""></div></div>
-      <div class="mq-item" aria-hidden="true"><div class="mq-logo mq-seg"><img src="logos/segway.png" alt=""></div></div>
-      <div class="mq-item" aria-hidden="true"><div class="mq-logo mq-mark"><img src="logos/markslojd.avif" alt=""></div></div>
-      <div class="mq-item" aria-hidden="true"><div class="mq-logo mq-nuu"><img src="logos/nuura.svg" alt=""></div></div>
-      <div class="mq-item" aria-hidden="true"><div class="mq-logo mq-ved"><img src="logos/vedum.png" alt=""></div></div>
-      <div class="mq-item" aria-hidden="true"><div class="mq-logo mq-tine"><img src="logos/tinekhome.svg" alt=""></div></div>
       <div class="mq-item" aria-hidden="true"><div class="mq-logo mq-husq"><img src="logos/husqvarna.jpg" alt=""></div></div>
+      <div class="mq-item" aria-hidden="true"><div class="mq-logo mq-seg"><img src="logos/segway.png" alt=""></div></div>
+      <div class="mq-item" aria-hidden="true"><div class="mq-logo mq-ved"><img src="logos/vedum.png" alt=""></div></div>
+      <div class="mq-item" aria-hidden="true"><div class="mq-logo mq-mn"><img src="logos/mille_notti.avif" alt=""></div></div>
+      <div class="mq-item" aria-hidden="true"><div class="mq-logo mq-nuu"><img src="logos/nuura.svg" alt=""></div></div>
+      <div class="mq-item" aria-hidden="true"><div class="mq-logo mq-sioo"><img src="logos/sioox.png" alt=""></div></div>
+      <div class="mq-item" aria-hidden="true"><div class="mq-logo mq-tine"><img src="logos/tinekhome.svg" alt=""></div></div>
+      <div class="mq-item" aria-hidden="true"><div class="mq-logo mq-jape"><img src="logos/jape.svg" alt=""></div></div>
     </div>
   </div>
 </div>
 
 <div class="gd"></div>
 
-<!-- TRE SPÅR -->
+<!-- FYRA SPÅR -->
 <section id="sec-spar">
   <div class="sp-orb sp-orb-1" aria-hidden="true"></div>
   <div class="sp-inner">
-    <p class="sec-lbl rv">Tre spår</p>
-    <h2 class="sec-h2 rv">Tre sätt att visa <em>Tapwell</em> i Villa&nbsp;Sjöviks hem.</h2>
-    <p class="sec-sublead rv">Tre vinklar som tar avstamp i Tapwells egen prioritering — den inbyggda flaggskeppslösningen, den fristående skulpturen, och den koncern-helhet som ingen annan i marknaden kan visa. Krom och Brushed Nickel hela vägen, ingen mässing, ingen kompromiss på finish. Allt utgår från Tapwells egen tagline: <em>allt handlar om känslan.</em></p>
-    <div class="sp-grid sp-grid-3">
+    <p class="sec-lbl rv">Fyra spår</p>
+    <h2 class="sec-h2 rv">Fyra <em>projektspår</em> att väva in Tapwell i.</h2>
+    <div class="sp-grid sp-grid-3plus1">
 
       <div class="sp-c rv d1">
         <p class="sp-eyebrow">Spår 01</p>
-        <h3>BOX7200 — den arkitektoniska linjen</h3>
-        <p class="sp-sub">"En tyst lyx, byggd in i rummet"</p>
-        <p class="sp-body">Filmen som leder med Tapwells egen toppmodell — <em>BOX7200 ED2 i krom</em>, inbyggd som en oavbruten arkitektonisk linje från taket. En stilla morgon i Villa Sjöviks badrum: vatten som glittrar mot natursten-golvet, Carins hand som glider över den spegelblanka kromtermostaten, regnduschen som faller jämnt över linhandduken. Inga features-listor, ingen säljsnack — bara den tysta lyxen som uppstår när material, ljus och proportion sitter ihop. Tapwells tagline blir filmens kärna och storyn lämnar följaren med en känsla, inte en specifikation.</p>
-        <span class="sp-tag">BOX7200 ED2 &middot; Krom &middot; Hero-film</span>
+        <h3>Den arkitektoniska linjen</h3>
+        <p class="sp-sub">"BOX7200 ED2 i krom, inbyggd som rummet"</p>
+        <p class="sp-body">En video där BOX7200 ED2 står som mittpunkt i ett av Villa Sjöviks lugnaste rum &mdash; badrummet i morgonljus, takduschen inbyggd som en oavbruten arkitektonisk linje från taket. Vatten som glittrar mot natursten-golvet, närbild på den spegelblanka kromtermostaten, regnduschen som faller jämnt över linhandduken. Tapwells egen tagline blir filmens kärna: <em>allt handlar om känslan</em>. Inga features-listor &mdash; bara den tysta lyxen som uppstår när material, ljus och proportion sitter ihop. Publicerad i Villa Sjöviks kanaler med direktlänk till BOX7200.</p>
+        <span class="sp-tag">BOX7200 ED2 &middot; Krom &middot; Inbyggnadssystem</span>
       </div>
 
       <div class="sp-c rv d2">
         <p class="sp-eyebrow">Spår 02</p>
-        <h3>ARM7300 — duschkolonnen som möbel</h3>
-        <p class="sp-sub">"Brushed Nickel mot varm jordton"</p>
-        <p class="sp-body">Den fristående vinkeln för följaren som inte ska riva sitt badrum för att uppgradera. <em>ARM7300-duschkolonnen i Brushed Nickel</em> placeras som en skulptur i ett av Villa Sjöviks ljusa rum — Ø320mm-regndusch som faller över linhandduk på krökt mässingsstång, en gren i en lergodskruka i hörnet, morgonljus mot kalkad vägg. Brushed Nickel mjukar upp det metalliska, harmoniserar med den varma paletten och bevisar att Tapwell hör hemma också i rummen som är redan klara. En reel + tre stillebenbilder som säljer hela ARM-serien.</p>
+        <h3>Duschkolonnen som möbel</h3>
+        <p class="sp-sub">"ARM7300 i Brushed Nickel, fristående skulptur"</p>
+        <p class="sp-body">En video för följaren som inte ska riva sitt badrum för att uppgradera. ARM7300 placeras som en skulptur i Villa Sjöviks ljusa rum &mdash; Ø320mm-regndusch som faller över linhandduk på krökt mässingsstång, en gren i en lergodskruka, morgonljus mot kalkad vägg. Brushed Nickel mjukar upp det metalliska och harmoniserar med den varma paletten. Storytelling: Tapwell hör hemma också i rummen som redan är klara. Närbild på den borstade ytan, vattnets lugn, en hand som slår på termostaten. Publicerad i Villa Sjöviks kanaler.</p>
         <span class="sp-tag">ARM7300 &middot; Brushed Nickel &middot; Fristående</span>
       </div>
 
       <div class="sp-c rv d3">
         <p class="sp-eyebrow">Spår 03</p>
-        <h3>Tapwell + Bricmate — koncernen i ett rum</h3>
-        <p class="sp-sub">"Den vinkel ingen annan kan göra"</p>
-        <p class="sp-body">Vinkeln som lyfter båda brand i samma berättelse. <em>BOX7268 ED2 i krom</em> mot en <em>Bricmate granitkeramik-vägg</em>, samspelet mellan tre material — den blanka kromen, den matta natursten-känslan, det varma trähanddukstället från Villa Sjöviks egen styling. En sammanhållen story som visar varför Tapwell och Bricmate hör ihop i samma koncern, en spjutspets för Stockholm Furniture Fair-narrativet, och en pitch som ingen extern aktör kan replicate. Större engagemang, parallell exponering, ett färdigt content-paket för båda kanaler.</p>
+        <h3>Koncernen i ett rum</h3>
+        <p class="sp-sub">"Tapwell + Bricmate, vinkeln ingen annan kan göra"</p>
+        <p class="sp-body">En video som lyfter koncernkopplingen som narrativ. BOX7268 ED2 i krom mot en Bricmate granitkeramik-vägg &mdash; samspelet mellan tre material, den blanka kromen, den matta natursten-känslan, det varma trähanddukstället från Villa Sjöviks egen styling. Storytelling: Tapwell och Bricmate hör ihop i samma koncern, en spjutspets för Stockholm Furniture Fair-narrativet. Reklam för två brand i samma film, ett färdigt content-paket för båda kanaler. Publicerad i Villa Sjöviks kanaler.</p>
         <span class="sp-tag">BOX7268 &middot; Bricmate &middot; Koncern-narrativ</span>
+      </div>
+
+      <div class="sp-divider rv" aria-hidden="true"></div>
+
+      <div class="sp-c sp-wide rv d4">
+        <div class="sp-wide-grid">
+          <div>
+            <p class="sp-eyebrow">Spår 04</p>
+            <h3>Ert upplägg</h3>
+            <p class="sp-sub">"Formad av Tapwell"</p>
+          </div>
+          <p class="sp-body">Finns det en specifik modell, finish eller säsongsfokus ni vill lyfta &mdash; en ny lansering, ett kök-spår, en kampanjperiod &mdash; så formar Villa Sjövik gärna spåret efter er vision. Ni skickar briefen, jag översätter den till Villa Sjöviks visuella språk på en plats som följarna redan lever med.</p>
+        </div>
+        <span class="sp-tag">Skräddarsytt &middot; Modell &middot; Säsong</span>
       </div>
 
     </div>
@@ -823,18 +1094,74 @@ position:relative;overflow:hidden;transition:color .35s}
         <p class="sc-lbl">Följare totalt</p>
       </div>
       <div class="sc rv d2">
-        <div class="sc-bg sc-bg-sym" aria-hidden="true">★</div>
-        <span class="sc-num" style="font-size:clamp(16px,2.1vw,24px);transform:translateY(8px);line-height:1.15">Topp 13 i Sverige</span>
-        <p class="sc-sub">Sveriges största trädgårdsinfluencers &middot; <a href="https://www.gecko.se/insta" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-decoration-color:rgba(212,168,75,.35);text-underline-offset:3px">Gecko Trädgård, 2023</a></p>
-        <p class="sc-lbl">Utmärkelse</p>
-      </div>
-      <div class="sc rv d3">
         <div class="sc-bg sc-bg-sym" aria-hidden="true">&amp;</div>
         <span class="sc-num" style="font-size:clamp(18px,2.4vw,28px);transform:translateY(8px)">Hem &amp; trädgård</span>
         <p class="sc-sub">Inredning &middot; Hemliv &middot; Trädgård</p>
         <p class="sc-lbl">Nisch &amp; målgrupp</p>
       </div>
+      <div class="sc rv d3">
+        <div class="sc-bg sc-bg-sym" aria-hidden="true">@</div>
+        <span class="sc-num" style="font-size:clamp(16px,2.1vw,24px);transform:translateY(8px)">Visuell kreatör</span>
+        <p class="sc-sub">Villa Sjövik &mdash; @villasjovik</p>
+        <p class="sc-lbl">Varumärke</p>
+      </div>
     </div>
+  </div>
+</section>
+
+<div class="gd"></div>
+
+<!-- META — KONVERTERINGSKEDJA (visuellt flow) -->
+<section id="sec-meta">
+  <div class="meta-inner">
+    <p class="sec-lbl rv">Effekten bakom</p>
+    <h2 class="sec-h2 rv">Mer än räckvidd. <em>Konvertering.</em></h2>
+
+    <div class="meta-flow rv">
+      <div class="flow-rail">
+        <div class="flow-rail-line" aria-hidden="true"></div>
+        <div class="flow-rail-trace" aria-hidden="true"></div>
+        <div class="flow-particle p1" aria-hidden="true"></div>
+        <div class="flow-particle p2" aria-hidden="true"></div>
+        <div class="flow-particle p3" aria-hidden="true"></div>
+
+        <div class="flow-node n1">
+          <div class="flow-node-dot-wrap">
+            <div class="flow-node-pulse" aria-hidden="true"></div>
+            <div class="flow-node-dot">01</div>
+          </div>
+          <div class="flow-node-label">
+            <span class="flow-cap">Berättelsen publiceras</span>
+            <span class="flow-sub">194&nbsp;000 följare</span>
+          </div>
+        </div>
+
+        <div class="flow-node n2">
+          <div class="flow-node-dot-wrap">
+            <div class="flow-node-pulse" aria-hidden="true"></div>
+            <div class="flow-node-dot">02</div>
+          </div>
+          <div class="flow-node-label">
+            <span class="flow-cap">Meta-pixel spårar tittarna</span>
+            <span class="flow-sub">Tapwells publik byggs</span>
+          </div>
+        </div>
+
+        <div class="flow-node n3">
+          <div class="flow-node-dot-wrap">
+            <div class="flow-node-pulse" aria-hidden="true"></div>
+            <div class="flow-node-dot">03</div>
+          </div>
+          <div class="flow-node-label">
+            <span class="flow-cap">Meta-annonsen följer dem</span>
+            <span class="flow-sub">Följare &rarr; besökare &rarr; köpare</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="meta-kicker rv">Betalt samarbete betalar tillbaka &mdash; när varje <em>exponering har ett nästa steg.</em></p>
+    <p class="meta-anchor rv"><span class="meta-anchor-text">Aktiveras med räckviddsförstärkning i nästa steg</span> <span class="meta-anchor-arrow" aria-hidden="true">↓</span></p>
   </div>
 </section>
 
@@ -846,41 +1173,55 @@ position:relative;overflow:hidden;transition:color .35s}
   <div class="pr-inner">
     <p class="sec-lbl rv">Investering</p>
     <h2 class="sec-h2 rv">Två vägar att bygga <em>berättelse och räckvidd.</em></h2>
-    <p class="sec-sublead rv">Ett fokuserat engångsupplägg där mal-storyn får sätta tonen — eller ett komplett kampanjupplägg där alla tre spår väver berättelsen om förebyggande hemvård till en sammanhållen kommunikation. Ni får full nyttjanderätt till allt material i båda fallen.</p>
+
+    <div class="ads-toggle rv" id="ads-toggle-wrap">
+      <span class="demo-hint" id="ads-demo-hint" aria-hidden="true">Vi rekommenderar <span class="demo-hint-arrow">↓</span></span>
+      <button class="ads-pill" id="ads-toggle" type="button" aria-pressed="false">
+        <span class="ads-switch" aria-hidden="true"></span>
+        <span class="ads-text">
+          <span class="ads-label">Räckviddsförstärkning</span>
+          <span class="ads-detail-wrap">
+            <span class="ads-detail ads-detail-default">+10 000 SEK för 150 000+ extra garanterade visningar via Meta&nbsp;Ads</span>
+            <span class="ads-detail ads-detail-active">Aktiv &middot; 150 000+ extra garanterade visningar via Meta&nbsp;Ads</span>
+          </span>
+        </span>
+      </button>
+    </div>
 
     <div class="price-grid">
 
-      <!-- Startpaket -->
-      <div class="price-box rv d1">
+      <!-- Startpaket (featured — pilot för 2026) -->
+      <div class="price-box featured rv d1">
+        <span class="price-ribbon">Rekommenderat &middot; Pilot för 2026</span>
         <h3 class="price-title">Startpaket</h3>
         <p class="price-sub">1 video &middot; 2 stories med CTA &middot; 10 miljöbilder</p>
         <p class="price-total-lbl">Pris</p>
-        <p class="price-total">18 500</p>
+        <p class="price-total" data-base="18500" data-boost="28500">18 500</p>
         <span class="price-unit">SEK &middot; exkl. moms</span>
         <div class="price-includes">
-          <p class="pi hi">1 video publicerad i Villa Sjöviks kanaler</p>
-          <p class="pi hi">2 stories med direktlänk och CTA</p>
-          <p class="pi hi">10 miljöbilder i autentisk hemmiljö</p>
-          <p class="pi">Full nyttjanderätt till allt material</p>
-          <p class="pi">Styling, filmning och redigering ingår</p>
+          <p class="pi hi">1 video publicerad på Villa Sjöviks kanaler</p>
+          <p class="pi hi">2 stories på Villa Sjöviks kanaler &mdash; direktlänk och CTA</p>
+          <p class="pi hi">10 miljöbilder för era egna kanaler och hemsida</p>
+          <p class="pi">Full användarrätt till allt material</p>
+          <p class="pi">Styling, foto och redigering inkluderat</p>
         </div>
       </div>
 
-      <!-- Kampanjpaket (featured) -->
-      <div class="price-box featured rv d2">
-        <span class="price-ribbon">Rekommenderat &middot; MEST VÄRDE</span>
+      <!-- Kampanjpaket — skala efter pilot -->
+      <div class="price-box rv d2">
+        <span class="price-ribbon ribbon-muted">Skala efter pilot</span>
         <h3 class="price-title">Kampanjpaket</h3>
         <p class="price-sub">3 videor &middot; 6 stories med CTA &middot; 30 miljöbilder</p>
         <p class="price-total-lbl">Pris</p>
-        <p class="price-orig">ord. 55 500 kr</p>
-        <p class="price-total">39 000</p>
+        <p class="price-orig" data-base="reg. 55 500 SEK" data-boost="reg. 65 500 SEK">reg. 55 500 SEK</p>
+        <p class="price-total" data-base="39000" data-boost="49000">39 000</p>
         <span class="price-unit">SEK &middot; exkl. moms</span>
         <div class="price-includes">
-          <p class="pi hi">3 videor publicerade i Villa Sjöviks kanaler</p>
-          <p class="pi hi">6 stories med direktlänk och CTA</p>
-          <p class="pi hi">30 miljöbilder i autentisk hemmiljö</p>
-          <p class="pi">Full nyttjanderätt till allt material</p>
-          <p class="pi">Styling, filmning och redigering ingår</p>
+          <p class="pi hi">3 videor publicerade på Villa Sjöviks kanaler</p>
+          <p class="pi hi">6 stories på Villa Sjöviks kanaler &mdash; direktlänk och CTA</p>
+          <p class="pi hi">30 miljöbilder &mdash; fördelade över olika ljus, tillfällen och perspektiv</p>
+          <p class="pi">Full användarrätt till allt material</p>
+          <p class="pi">Styling, foto och redigering inkluderat</p>
         </div>
       </div>
 
@@ -898,12 +1239,12 @@ position:relative;overflow:hidden;transition:color .35s}
   <div class="cta-inner">
     <p class="cta-tag rv">Vad händer härnäst?</p>
     <h2 class="rv">
-      <span class="cta-l1">Vi bokar in</span><br>
-      <em class="cta-l2">ett möte.</em>
+      <span class="cta-l1">Vi stämmer av</span><br>
+      <em class="cta-l2">när ni är redo.</em>
     </h2>
     <div class="cta-btns rv">
       <div class="mag-w">
-        <a class="mag-btn filled ch" href="mailto:demi@bricmate.se?cc=kontakt@villasjovik.se&subject=Re%3A%20Tapwell%20%C3%97%20Villa%20Sj%C3%B6vik%20%E2%80%94%20Samarbete%202026">
+        <a class="mag-btn filled ch" href="mailto:demi@bricmate.se?cc=kontakt@villasjovik.se&subject=Sv%3A%20Tapwell%20x%20Villa%20Sj%C3%B6vik">
           <span>Skicka mail &rarr;</span>
         </a>
       </div>
@@ -1155,6 +1496,7 @@ if(spotSec){
       trackStart:()=>mqEl?(mqEl.getBoundingClientRect().top+window.scrollY):document.getElementById('sec-spar').getBoundingClientRect().top+window.scrollY
     },
     {id:'sec-profil',label:'Kanalen'},
+    {id:'sec-meta',label:'Effekten'},
     {id:'sec-pr',label:'Investering'},
     {id:'sec-cta',label:'Kontakt'}
   ].map(s=>({...s,el:document.getElementById(s.id)})).filter(s=>s.el);
@@ -1240,6 +1582,106 @@ if(spotSec){
     if(e.key==='ArrowDown'&&current<sections.length-1){e.preventDefault();sections[current+1].el.scrollIntoView({behavior:'smooth'})}
     if(e.key==='ArrowUp'&&current>0){e.preventDefault();sections[current-1].el.scrollIntoView({behavior:'smooth'})}
   });
+})();
+
+/* RÄCKVIDD-BOOST TOGGLE */
+(function(){
+  const toggle=document.getElementById('ads-toggle');
+  if(!toggle)return;
+  const totals=document.querySelectorAll('.price-total[data-base][data-boost]');
+  const origs=document.querySelectorAll('.price-orig[data-base][data-boost]');
+  let active=false;
+
+  function fmt(n){return Math.round(n).toLocaleString('sv-SE')}
+  function animateNumber(el,from,to,duration){
+    const start=performance.now();
+    function tick(now){
+      const t=Math.min((now-start)/duration,1);
+      const eased=1-Math.pow(1-t,3);
+      el.textContent=fmt(from+(to-from)*eased);
+      if(t<1)requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  toggle.addEventListener('click',()=>{
+    active=!active;
+    toggle.setAttribute('aria-pressed',active?'true':'false');
+    totals.forEach(el=>{
+      const base=+el.dataset.base, boost=+el.dataset.boost;
+      const from=active?base:boost, to=active?boost:base;
+      animateNumber(el,from,to,720);
+      el.classList.remove('boost-pulse');
+      void el.offsetWidth;
+      el.classList.add('boost-pulse');
+    });
+    origs.forEach(el=>{
+      el.textContent=active?el.dataset.boost:el.dataset.base;
+      el.classList.remove('boost-pulse');
+      void el.offsetWidth;
+      el.classList.add('boost-pulse');
+    });
+  });
+})();
+
+/* RÄCKVIDD-BOOST AUTO-DEMO — körs en gång per session när Investering-sektionen scrollas in */
+(function(){
+  const sec=document.getElementById('sec-pr');
+  const toggle=document.getElementById('ads-toggle');
+  const hint=document.getElementById('ads-demo-hint');
+  if(!sec||!toggle||!hint)return;
+
+  // Skip om sessionen redan sett demon
+  try{if(sessionStorage.getItem('tapwell-boost-demo-shown')==='true')return}catch(e){}
+
+  // Skip vid reduced motion
+  if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+
+  let triggered=false, demoActive=false, demoInternal=false;
+  const tids=[];
+
+  function clearTids(){tids.forEach(id=>clearTimeout(id));tids.length=0}
+  function endDemo(){
+    hint.classList.remove('show');
+    demoActive=false;
+    try{sessionStorage.setItem('tapwell-boost-demo-shown','true')}catch(e){}
+  }
+
+  // Avbryt demo om user själv klickar på toggle
+  toggle.addEventListener('click',()=>{
+    if(demoActive&&!demoInternal){clearTids();endDemo()}
+  });
+
+  const obs=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(!e.isIntersecting||triggered)return;
+      triggered=true;
+      obs.unobserve(e.target);
+
+      // 1.2s delay → visa hint
+      tids.push(setTimeout(()=>{
+        demoActive=true;
+        hint.classList.add('show');
+
+        // 0.4s senare → toggle ON (existing handler count:ar upp priserna)
+        tids.push(setTimeout(()=>{
+          if(!demoActive)return;
+          demoInternal=true;toggle.click();demoInternal=false;
+
+          // 3.0s pause med boost-pris visible
+          tids.push(setTimeout(()=>{
+            if(!demoActive)return;
+            demoInternal=true;toggle.click();demoInternal=false;
+
+            // 0.7s efter → fade ut hint, sätt session-flag
+            tids.push(setTimeout(()=>{endDemo()},700));
+          },3000));
+        },400));
+      },1200));
+    });
+  },{threshold:0.3});
+
+  obs.observe(sec);
 })();
 
 /* BOKNINGSFLOW */
