@@ -558,6 +558,12 @@ box-shadow:
 
 /* META — KONVERTERINGSKEDJA (visuellt flow) */
 #sec-meta{position:relative;background:linear-gradient(168deg,#2a231c 0%,var(--brn2) 30%,var(--brn) 70%,#110e0b 100%);padding:120px 24px 110px;overflow:hidden}
+#sec-meta::before{content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
+  background-image:
+    radial-gradient(circle, rgba(212,168,75,.055) 1px, transparent 1.4px),
+    radial-gradient(circle, rgba(212,168,75,.028) 1px, transparent 1.4px);
+  background-size: 28px 28px, 41px 41px;
+  background-position: 0 0, 14px 20px}
 #sec-meta::after{content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
   background:radial-gradient(ellipse 70% 50% at 50% 45%,rgba(212,168,75,.07),transparent 65%)}
 .meta-inner{max-width:1180px;margin:0 auto;position:relative;z-index:1;text-align:center}
