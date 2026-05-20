@@ -1,5 +1,5 @@
 {
-  "synced_at": "2026-05-07T11:55:57.581Z",
+  "synced_at": "2026-05-20T14:22:54.163Z",
   "manifest_version": 1,
   "files": {
     "husqvarna.svg": {
@@ -16,6 +16,16 @@
       "md5": "496c1c47e9a623b7c97a9278b4912f75",
       "source": "wiki/assets/husqvarna/husqvarna.jpg",
       "brand": "husqvarna"
+    },
+    "jape.svg": {
+      "md5": "636666ed433f275d93430c96b1e102d7",
+      "source": "wiki/assets/jape/jape.svg",
+      "brand": "jape"
+    },
+    "jape.webp": {
+      "md5": "dc4369d29285b4896d8cb9a56f9376c5",
+      "source": "wiki/assets/jape/jape.webp",
+      "brand": "jape"
     },
     "lexington.svg": {
       "md5": "6af45bdb652477cc4e1e013ff4f7644b",
