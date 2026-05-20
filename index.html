@@ -456,7 +456,8 @@ box-shadow:
   inset 0 1px 0 rgba(255,255,255,.08)}
 
 .price-grid>.price-box:first-child{--pb-rot:11deg;animation-delay:-3s}
-.price-grid>.price-box:last-child{--pb-rot:-11deg;animation-delay:0s;--pb-scale:.9}
+.price-grid>.price-box:last-child{--pb-rot:-11deg;animation-delay:0s}
+.price-grid>.price-box:not(.featured){--pb-scale:.9}
 
 @keyframes pb-float-anim{
   0%{--pb-float:0px}
@@ -1132,8 +1133,24 @@ position:relative;overflow:hidden;transition:color .35s}
 
     <div class="price-grid">
 
+      <!-- Startpaket -->
+      <div class="price-box rv d1">
+        <h3 class="price-title">Startpaket</h3>
+        <p class="price-sub">1 video &middot; 2 stories med CTA &middot; 10 miljöbilder</p>
+        <p class="price-total-lbl">Pris</p>
+        <p class="price-total" data-base="18500" data-boost="28500">18 500</p>
+        <span class="price-unit">SEK &middot; exkl. moms</span>
+        <div class="price-includes">
+          <p class="pi hi">1 video på TVM300-160 publicerad på Villa Sjöviks kanaler</p>
+          <p class="pi hi">2 stories på Villa Sjöviks kanaler &mdash; direktlänk och CTA</p>
+          <p class="pi hi">10 miljöbilder på TVM300-160 för era egna kanaler och hemsida</p>
+          <p class="pi">Full användarrätt till allt material</p>
+          <p class="pi">Styling, foto och redigering inkluderat</p>
+        </div>
+      </div>
+
       <!-- Kampanjpaket (featured — rekommenderat) -->
-      <div class="price-box featured rv d1">
+      <div class="price-box featured rv d2">
         <span class="price-ribbon">Rekommenderat &middot; MEST VÄRDE</span>
         <h3 class="price-title">Kampanjpaket</h3>
         <p class="price-sub">1 video &middot; 2 stories med CTA &middot; 20 miljöbilder &middot; 15 sortimentsbilder</p>
@@ -1146,22 +1163,6 @@ position:relative;overflow:hidden;transition:color .35s}
           <p class="pi hi">2 stories på Villa Sjöviks kanaler &mdash; direktlänk och CTA</p>
           <p class="pi hi">20 miljöbilder på TVM300-160 &mdash; ert utökade bibliotek</p>
           <p class="pi hi">15 sortimentsbilder på 5 av era duschar &mdash; färdiga miljöbilder för hemsida och sociala medier. Vi formar miljöerna i post-produktion (Photoshop &middot; 3D-rendering) från era egna produktbilder &mdash; ni skickar inga produkter</p>
-          <p class="pi">Full användarrätt till allt material</p>
-          <p class="pi">Styling, foto och redigering inkluderat</p>
-        </div>
-      </div>
-
-      <!-- Startpaket -->
-      <div class="price-box rv d2">
-        <h3 class="price-title">Startpaket</h3>
-        <p class="price-sub">1 video &middot; 2 stories med CTA &middot; 10 miljöbilder</p>
-        <p class="price-total-lbl">Pris</p>
-        <p class="price-total" data-base="18500" data-boost="28500">18 500</p>
-        <span class="price-unit">SEK &middot; exkl. moms</span>
-        <div class="price-includes">
-          <p class="pi hi">1 video på TVM300-160 publicerad på Villa Sjöviks kanaler</p>
-          <p class="pi hi">2 stories på Villa Sjöviks kanaler &mdash; direktlänk och CTA</p>
-          <p class="pi hi">10 miljöbilder på TVM300-160 för era egna kanaler och hemsida</p>
           <p class="pi">Full användarrätt till allt material</p>
           <p class="pi">Styling, foto och redigering inkluderat</p>
         </div>
